@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tlhabanelo Sehoole Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header>
+      <h1>Tlhabanelo Sehoole</h1>
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <img src="images/Tlhabanelo S.jpg" class="profile-pic" alt="About Me" />
+      <p>
+        Hello! I’m Tlhabanelo Sehoole, a tech-savvy professional with experience
+        in IT configuration, web development, and retail management. I enjoy
+        building functional solutions, optimizing systems, and creating seamless
+        user experiences. I’m certified in Full-Stack Development and IT
+        support, and I’m always eager to learn and grow in technology and
+        business.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <h2>My Projects</h2>
+
+      <div class="project">
+        <img
+          src="images/todo list.png"
+          class="small-image"
+          alt="Todo List Project"
+        />
+        <p>
+          Todo List App: Built with HTML, CSS, and JavaScript to manage tasks
+          efficiently.
+        </p>
+      </div>
+
+      <div class="project">
+        <img
+          src="images/weather.webp"
+          class="small-image"
+          alt="Weather Project"
+        />
+        <p>
+          Weather App: Fetches real-time weather data using API integration and
+          displays it in a user-friendly interface.
+        </p>
+      </div>
+
+      <div class="project">
+        <img
+          src="images/about me.jpg"
+          class="small-image"
+          alt="Portfolio Example"
+        />
+        <p>
+          Portfolio Website: This responsive portfolio showcasing my projects,
+          skills, and contact info.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+
+      <p>
+        Email:
+        <a href="mailto:tlhabanelosehoole@gmail.com"
+          >tlhabanelosehoole@gmail.com</a
+        >
+      </p>
+      <p>Phone: <a href="tel:+27619415201">+27 61 941 5201</a></p>
+      <p>
+        LinkedIn:
+        <a
+          href="https://linkedin.com/in/tlhabanelo-sehoole-29b415274"
+          target="_blank"
+          >linkedin.com/in/tlhabanelo-sehoole-29b415274</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/NeloSeh" target="_blank"
+          >github.com/NeloSeh</a
+        >
+      </p>
+
+      <!-- Optional: Simple contact form -->
+      <form
+        action="mailto:tlhabanelosehoole@gmail.com"
+        method="post"
+        enctype="text/plain"
+        style="margin-top: 20px"
+      >
+        <input
+          type="text"
+          name="Name"
+          placeholder="Your Name"
+          required
+          style="width: 100%; padding: 10px; margin-bottom: 10px"
+        />
+        <input
+          type="email"
+          name="Email"
+          placeholder="Your Email"
+          required
+          style="width: 100%; padding: 10px; margin-bottom: 10px"
+        />
+        <textarea
+          name="Message"
+          placeholder="Your Message"
+          required
+          style="width: 100%; padding: 10px; margin-bottom: 10px"
+        ></textarea>
+        <button
+          type="submit"
+          style="
+            padding: 10px 20px;
+            background-color: rgba(180, 0, 50, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        >
+          Send
+        </button>
+      </form>
+    </section>
+
+    <!-- Fade-in JS -->
+    <script>
+      const sections = document.querySelectorAll("section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
+  </body>
+</html>

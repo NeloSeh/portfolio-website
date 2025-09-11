@@ -1,0 +1,202 @@
+/* =========================
+   General Styles
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: rgba(255, 200, 220, 0.3); /* soft transparent pink */
+  color: rgba(50,50,50,0.9);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: rgba(180, 0, 50, 0.7);
+}
+
+a:hover {
+  color: rgba(180, 0, 50, 0.9);
+}
+
+/* =========================
+   Header / Navigation
+========================= */
+header {
+  background-color: rgba(50, 50, 50, 0.1);
+  color: rgba(0,0,0,0.8);
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+nav a:hover,
+nav a.active {
+  color: rgba(180,0,50,1); /* strong pink for hover/active */
+}
+
+/* =========================
+   Sections
+========================= */
+section {
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.6); /* soft translucent cards */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  
+  /* Fade-in effect */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Fade-in active */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   About Me Section
+========================= */
+#about {
+  display: flex;
+  flex-direction: row; /* side by side on desktop */
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: left;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0; /* prevents stretching */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#about p {
+  max-width: 600px;
+  font-weight: 300;
+  font-size: 1.1em;
+  color: rgba(0,0,0,0.85);
+}
+
+/* =========================
+   Projects Section
+========================= */
+#projects h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.project {
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 350px;
+  flex: 1 1 300px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  background-color: rgba(255,200,220,0.8); /* soft pink tint on hover */
+}
+
+.small-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 10px auto;
+  border-radius: 10%;
+  display: block;
+}
+
+.project p {
+  margin-top: 10px;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* =========================
+   Contact Section
+========================= */
+#contact h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+#contact p {
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+@media (max-width: 767px) {
+  /* About section stacks vertically on small screens */
+  #about {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  #about p {
+    max-width: 90%;
+  }
+
+  /* Projects stacked vertically */
+  #projects {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project {
+    max-width: 90%;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
